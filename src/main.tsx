@@ -13,10 +13,18 @@ const clerkPubKey =
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ClerkProvider publishableKey={clerkPubKey}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ClerkProvider
+        publishableKey={clerkPubKey}
+        signInUrl="/login"
+        signUpUrl="/signup"
+        signInFallbackRedirectUrl="/"
+        signUpFallbackRedirectUrl="/"
+        signInForceRedirectUrl="/"
+        signUpForceRedirectUrl="/"
+      >
         <App />
-      </BrowserRouter>
-    </ClerkProvider>
+      </ClerkProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
