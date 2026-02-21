@@ -6,7 +6,7 @@ import App from './App';
 import './index.css';
 
 const DEFAULT_CLERK_PUBLISHABLE_KEY =
-  'pk_test_ZXhhY3QtcGFuZ29saW4tNzUuY2xlcmsuYWNjb3VudHMuZGV2JA';
+  'pk_test_ZmFzdC1hbmNob3Z5LTE5LmNsZXJrLmFjY291bnRzLmRldiQ';
 
 const clerkPubKey =
   import.meta.env.VITE_CLERK_PUBLISHABLE_KEY?.trim() || DEFAULT_CLERK_PUBLISHABLE_KEY;
