@@ -1,3 +1,4 @@
+import { AuthenticateWithRedirectCallback } from '@clerk/clerk-react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from '@/components/Layout';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
@@ -14,8 +15,9 @@ import { SubscriptionsPage } from '@/pages/SubscriptionsPage';
 
 export const AppRoutes = () => (
   <Routes>
-    <Route path="/login" element={<LoginPage />} />
-    <Route path="/signup" element={<SignupPage />} />
+    <Route path="/login/*" element={<LoginPage />} />
+    <Route path="/signup/*" element={<SignupPage />} />
+    <Route path="/sso-callback" element={<AuthenticateWithRedirectCallback signInFallbackRedirectUrl="/" signUpFallbackRedirectUrl="/" />} />
 
     <Route
       element={
