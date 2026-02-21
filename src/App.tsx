@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useUser } from '@clerk/clerk-react';
 import { AppRoutes } from '@/routes/AppRoutes';
 import { createOrUpdateUser } from '@/lib/firestore';
+import { AppErrorBoundary } from '@/components/AppErrorBoundary';
 
 function App() {
   const { user, isLoaded } = useUser();
@@ -17,10 +18,15 @@ function App() {
         premiumStatus: true,
       });
     };
+
     void syncUser();
   }, [isLoaded, user]);
 
-  return <AppRoutes />;
+  return (
+    <AppErrorBoundary>
+      <AppRoutes />
+    </AppErrorBoundary>
+  );
 }
 
 export default App;

@@ -21,3 +21,8 @@ Production-ready Vite + React + TypeScript app for Indian personal finance track
 - Firebase Firestore (database)
 - Tailwind CSS
 - Recharts
+
+
+### Clerk key fallback
+
+If `VITE_CLERK_PUBLISHABLE_KEY` is not set, the app falls back to the configured RupeeTrack Clerk test key so local development does not render a blank screen.
